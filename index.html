@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoffeeGaia — Café de especialidad tostado en casa</title>
+  <meta name="description" content="Café de origen único, tostado en pequeños lotes y servido con calma. Conoce nuestra carta, nuestro espacio y reserva tu mesa en CoffeeGaia.">
+  <meta name="theme-color" content="#191009">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CoffeeGaia — Café de especialidad tostado en casa">
+  <meta property="og:description" content="Granos de origen único, tostados en pequeños lotes y servidos con calma. Un rincón para quedarse un rato.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="CoffeeGaia, inicio">
+        <svg class="brand-bean" viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="16" cy="16" r="14.5"/>
+            <ellipse cx="16" cy="16" rx="6.4" ry="10.5" transform="rotate(38 16 16)"/>
+            <path d="M16 5.5c-3.6 2.6-3.6 18.4 0 21"/>
+          </g>
+        </svg>
+        <span>Coffee<em>Gaia</em></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#historia">Historia</a>
+        <a href="#menu">Menú</a>
+        <a href="#espacio">Espacio</a>
+        <a href="#visitanos">Visítanos</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="#reserva">Reservar mesa</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+    <div class="mobile-nav-inner">
+      <a href="#historia"><span>01</span>Historia</a>
+      <a href="#menu"><span>02</span>Menú</a>
+      <a href="#espacio"><span>03</span>Espacio</a>
+      <a href="#visitanos"><span>04</span>Visítanos</a>
+      <a href="#reserva"><span>05</span>Reservar mesa</a>
+    </div>
+    <div class="mobile-nav-foot">
+      <p>Calle 72 # 5-24, Bogotá</p>
+      <p>Lun – Dom · 7:00 – 19:00</p>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
+             alt="Taza de café de especialidad sobre una mesa de madera" fetchpriority="high">
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow eyebrow-light reveal">Tostado en casa · desde 2018</p>
+        <h1 class="reveal">El café que<br>te despierta <em>el alma</em>.</h1>
+        <p class="hero-copy reveal">Granos de origen único, tostados en pequeños lotes y servidos con calma. Un rincón para quedarse un rato.</p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#menu">
+            Ver el menú
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#reserva">Reservar mesa</a>
+        </div>
+
+        <div class="hero-foot reveal">
+          <p class="hero-rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><strong>4.9</strong> / 5 · 1.200 reseñas</span>
+          </p>
+          <p class="hero-hours">
+            <span class="pulse" aria-hidden="true"></span>
+            Abierto hoy · 7:00 – 19:00
+          </p>
+          <a class="scroll-cue" href="#historia">
+            Desliza
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Origen trazable</span>
+          <span>Tueste artesanal</span>
+          <span>Repostería del día</span>
+          <span>Métodos filtrados</span>
+          <span>Café de especialidad</span>
+          <span>Hecho con calma</span>
+        </div>
+        <div class="marquee-group">
+          <span>Origen trazable</span>
+          <span>Tueste artesanal</span>
+          <span>Repostería del día</span>
+          <span>Métodos filtrados</span>
+          <span>Café de especialidad</span>
+          <span>Hecho con calma</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HISTORIA ================= -->
+    <section class="section story" id="historia">
+      <div class="container story-grid">
+        <div class="story-media reveal">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+               alt="Interior de CoffeeGaia con mesas de madera y luz cálida" loading="lazy" decoding="async">
+          <div class="story-badge">
+            <svg viewBox="0 0 32 32" aria-hidden="true" class="story-badge-ico">
+              <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <ellipse cx="16" cy="16" rx="6.4" ry="10.5" transform="rotate(38 16 16)"/>
+                <path d="M16 5.5c-3.6 2.6-3.6 18.4 0 21"/>
+              </g>
+            </svg>
+            <div>
+              <p class="badge-title">Tostado en casa</p>
+              <p class="badge-copy">Cada martes, lotes de 5 kg</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <p class="eyebrow reveal">01 — Nuestra historia</p>
+          <h2 class="reveal">Un café honesto,<br>hecho <em>sin prisa</em>.</h2>
+          <p class="lede reveal">Nacimos en 2018 con una tostadora pequeña y una idea simple: que cada taza cuente lo que hay detrás. Trabajamos con ocho familias caficultoras de Huila, Nariño y Cauca, y tostamos en lotes que caben en una mesa.</p>
+          <p class="reveal">El resto es lo que ves: una barra de madera, buena música, repostería horneada cada mañana y gente que se queda más tiempo del que planeaba.</p>
+
+          <div class="stats reveal">
+            <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Orígenes vivos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">40k</span>
+              <span class="stat-label">Tazas al año</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">4.9</span>
+              <span class="stat-label">Valoración media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MENÚ ================= -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="menu-head">
+          <div>
+            <p class="eyebrow reveal">02 — La carta</p>
+            <h2 class="reveal">Lo que servimos<br><em>cada día</em>.</h2>
+          </div>
+
+          <div class="tabs reveal" role="tablist" aria-label="Categorías del menú">
+            <button class="tab" id="tab-calientes" role="tab" aria-selected="true" aria-controls="panel-calientes" tabindex="0">Cafés</button>
+            <button class="tab" id="tab-frios" role="tab" aria-selected="false" aria-controls="panel-frios" tabindex="-1">Fríos</button>
+            <button class="tab" id="tab-reposteria" role="tab" aria-selected="false" aria-controls="panel-reposteria" tabindex="-1">Repostería</button>
+          </div>
+        </div>
+
+        <div class="menu-panels reveal">
+          <div class="menu-panel" id="panel-calientes" role="tabpanel" aria-labelledby="tab-calientes" tabindex="0">
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Espresso <span class="tag">Favorito</span></span>
+                <span class="price">$6.000</span>
+                <span class="desc">60 ml · Huila, notas a panela, naranja y cacao.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Flat white</span>
+                <span class="price">$9.500</span>
+                <span class="desc">Doble ristretto con leche texturizada a 62 °C.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Filtrado V60</span>
+                <span class="price">$11.000</span>
+                <span class="desc">250 ml · método manual, lote rotativo de la semana.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cortado</span>
+                <span class="price">$7.500</span>
+                <span class="desc">Espresso y un velo de leche vaporizada.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Mocha de la casa</span>
+                <span class="price">$12.000</span>
+                <span class="desc">Chocolate 70 % del Cauca, canela y cacao rallado.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Capuchino de avellana</span>
+                <span class="price">$10.500</span>
+                <span class="desc">Leche entera, sirope de avellana tostada y nuez moscada.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-frios" role="tabpanel" aria-labelledby="tab-frios" tabindex="0" hidden>
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Cold brew 18 h <span class="tag">Vegano</span></span>
+                <span class="price">$11.000</span>
+                <span class="desc">Extracción en frío, servido con hielo grande y naranja.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Espresso tónico</span>
+                <span class="price">$12.500</span>
+                <span class="desc">Doble espresso, tónica artesanal y piel de limón.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Latte helado</span>
+                <span class="price">$10.000</span>
+                <span class="desc">Leche fría, hielo y un shot de nuestro blend.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Frappé de avellana</span>
+                <span class="price">$13.500</span>
+                <span class="desc">Café, leche, hielo y crema batida de la casa.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Iced matcha latte</span>
+                <span class="price">$13.000</span>
+                <span class="desc">Matcha ceremonial, leche de avena y un toque de miel.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Limonada de café</span>
+                <span class="price">$9.500</span>
+                <span class="desc">Cold brew, limón, panela y hierbabuena. Sorprende.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-reposteria" role="tabpanel" aria-labelledby="tab-reposteria" tabindex="0" hidden>
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Croissant de mantequilla</span>
+                <span class="price">$7.500</span>
+                <span class="desc">Horneado a las 7:00 a. m. 36 capas de paciencia.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Pain au chocolat</span>
+                <span class="price">$8.500</span>
+                <span class="desc">Masa madre laminada y chocolate amargo.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Banana bread <span class="tag">Vegano</span></span>
+                <span class="price">$9.000</span>
+                <span class="desc">Plátano maduro, nueces y especias. Sin lácteos.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cheesecake de maracuyá</span>
+                <span class="price">$12.000</span>
+                <span class="desc">Base de galleta, queso crema y coulis ácido.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cookie de chocolate</span>
+                <span class="price">$6.500</span>
+                <span class="desc">Centro blandito, sal marina y chocolate 60 %.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Torta de zanahoria</span>
+                <span class="price">$10.500</span>
+                <span class="desc">Hecha en casa, con frosting de queso y nuez.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="menu-foot reveal">
+          <p>Todos nuestros cafés son de origen único y tueste propio. También tienes leche de avena y almendra sin costo extra.</p>
+          <a class="link-arrow" href="#reserva">
+            Pedir para llevar
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESO ================= -->
+    <section class="section process">
+      <div class="container">
+        <div class="process-head">
+          <p class="eyebrow eyebrow-light reveal">03 — Del origen a tu taza</p>
+          <h2 class="reveal">Tres pasos.<br><em>Ningún atajo</em>.</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Selección</h3>
+            <p>Catamos cada lote con la familia que lo cultivó. Solo compramos lo que nos gustaría tomar todos los días.</p>
+          </article>
+          <article class="step reveal d1">
+            <span class="step-num">02</span>
+            <h3>Tueste</h3>
+            <p>Perfiles de tueste medio, desarrollados en casa para resaltar la fruta y la dulzura natural del grano.</p>
+          </article>
+          <article class="step reveal d2">
+            <span class="step-num">03</span>
+            <h3>Extracción</h3>
+            <p>Receta calibrada cada mañana. Pesamos, cronometramos y ajustamos: nada queda al azar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+    <section class="section gallery" id="espacio">
+      <div class="container">
+        <div class="gallery-head">
+          <div>
+            <p class="eyebrow reveal">04 — El espacio</p>
+            <h2 class="reveal">Un lugar para<br><em>quedarse</em>.</h2>
+          </div>
+          <p class="gallery-copy reveal">Luz de mañana, mesas compartidas y una barra donde siempre hay alguien dispuesto a hablar de café. Bienvenido a casa.</p>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Granos de café tostados de cerca" loading="lazy" decoding="async">
+            <figcaption>Nuestro grano</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Barista sirviendo café filtrado" loading="lazy" decoding="async">
+            <figcaption>La barra</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Croissant recién horneado espolvoreado con cacao" loading="lazy" decoding="async">
+            <figcaption>Recién horneado</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Mesa junto a la ventana con plantas y café" loading="lazy" decoding="async">
+            <figcaption>La esquina</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Barista sirviendo latte art en una taza" loading="lazy" decoding="async">
+            <figcaption>Latte art</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Fachada de la cafetería con mesas en la calle" loading="lazy" decoding="async">
+            <figcaption>Desde la calle</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="section testimonials">
+      <div class="container">
+        <p class="eyebrow reveal">05 — La gente dice</p>
+        <h2 class="reveal">Buen café,<br><em>mejores mañanas</em>.</h2>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial reveal">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“El flat white más equilibrado de la zona. Vengo a trabajar y termino conversando con el barista sobre fincas.”</blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">LM</span>
+              <span><strong>Laura M.</strong><small>Cliente desde 2021</small></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal d1">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Reservamos para un cumpleaños y nos trataron como en casa. El cheesecake de maracuyá merece su propio viaje.”</blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">JC</span>
+              <span><strong>Julián C.</strong><small>Reserva de grupo</small></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal d2">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Compro el café en grano cada quince días. Es el único que logro preparar igual en casa sin extrañar la barra.”</blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">AS</span>
+              <span><strong>Ana S.</strong><small>Suscriptora de café</small></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VISÍTANOS / RESERVA ================= -->
+    <section class="section visit" id="visitanos">
+      <div class="container">
+        <div class="visit-head">
+          <p class="eyebrow reveal">06 — Visítanos</p>
+          <h2 class="reveal">Pasa por aquí<br><em>esta semana</em>.</h2>
+        </div>
+
+        <div class="visit-grid">
+          <div class="visit-media reveal">
+            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                 alt="Salón amplio de café con mesas junto a la ventana" loading="lazy" decoding="async">
+            <div class="info-card">
+              <div class="info-row">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <div><span>Calle 72 # 5-24</span><small>Bogotá · Chapinero</small></div>
+              </div>
+              <div class="info-row">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                <div><span>Lun – Dom · 7:00 – 19:00</span><small>Cocina hasta las 18:30</small></div>
+              </div>
+              <div class="info-row">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 4 5.1 1 1 0 0 1 5 4Z"/></svg>
+                <div><span>+57 601 742 88 10</span><small>hola@coffeegaia.co</small></div>
+              </div>
+              <a class="link-arrow" href="https://maps.google.com/?q=Calle+72+%23+5-24,+Bogota" target="_blank" rel="noopener">
+                Cómo llegar
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="booking reveal d1" id="reserva">
+            <p class="eyebrow eyebrow-light">Reserva tu mesa</p>
+            <h3 class="booking-title">Guardamos<br><em>tu rincón</em>.</h3>
+            <p class="booking-copy">Déjanos tus datos y te confirmamos por correo en menos de una hora.</p>
+
+            <form class="booking-form" id="booking-form" novalidate>
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="personas">Personas</label>
+                <select id="personas" name="personas" required>
+                  <option value="" selected disabled>Elige</option>
+                  <option>1 persona</option>
+                  <option>2 personas</option>
+                  <option>3 personas</option>
+                  <option>4 personas</option>
+                  <option>5 personas</option>
+                  <option>6 o más</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="fecha">Fecha</label>
+                <input id="fecha" name="fecha" type="date" required>
+              </div>
+              <div class="field">
+                <label for="hora">Hora</label>
+                <input id="hora" name="hora" type="time" min="07:00" max="18:30" value="10:00" required>
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">
+                Confirmar reserva
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="form-msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-news">
+        <div>
+          <p class="eyebrow eyebrow-light reveal">La carta del mes</p>
+          <h2 class="reveal">Café nuevo<br><em>en tu correo</em>.</h2>
+        </div>
+        <div class="news-letter reveal">
+          <p>Un correo al mes con el origen de temporada, catas y recetas. Sin ruido, sin spam.</p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <label class="sr-only" for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+            <button type="submit" aria-label="Suscribirme">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#inicio" aria-label="CoffeeGaia, inicio">
+            <svg class="brand-bean" viewBox="0 0 32 32" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <circle cx="16" cy="16" r="14.5"/>
+                <ellipse cx="16" cy="16" rx="6.4" ry="10.5" transform="rotate(38 16 16)"/>
+                <path d="M16 5.5c-3.6 2.6-3.6 18.4 0 21"/>
+              </g>
+            </svg>
+            <span>Coffee<em>Gaia</em></span>
+          </a>
+          <p>Café de especialidad tostado en casa. Un proyecto pequeño, de barrio y con mucha curiosidad.</p>
+        </div>
+
+        <nav aria-label="Explorar">
+          <h4>Explorar</h4>
+          <a href="#historia">Historia</a>
+          <a href="#menu">Menú</a>
+          <a href="#espacio">Espacio</a>
+          <a href="#visitanos">Visítanos</a>
+        </nav>
+
+        <div>
+          <h4>Visítanos</h4>
+          <p>Calle 72 # 5-24<br>Bogotá, Colombia</p>
+          <p>Lun – Dom · 7:00 – 19:00</p>
+        </div>
+
+        <div>
+          <h4>Síguenos</h4>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a4 4 0 1 1-3.5-3.9"/><path d="M14 4c.5 3 2.4 4.8 5 5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> CoffeeGaia. Todos los derechos reservados.</p>
+        <p>Tostado con calma en Bogotá <span aria-hidden="true">✦</span></p>
+        <a href="#inicio" class="back-top">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
