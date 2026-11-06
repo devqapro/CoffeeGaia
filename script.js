@@ -133,12 +133,21 @@
   const sections = navLinks
     .map((link) => $(link.getAttribute("href")))
     .filter(Boolean);
+  const heroSection = $("#inicio");
+  const spySections = [...sections, heroSection].filter(Boolean);
 
-  if ("IntersectionObserver" in window && sections.length) {
+  if ("IntersectionObserver" in window && spySections.length) {
     const spy = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
+
+          // En la portada no debe quedar resaltada ninguna sección.
+          if (entry.target === heroSection) {
+            navLinks.forEach((link) => link.removeAttribute("aria-current"));
+            return;
+          }
+
           navLinks.forEach((link) => {
             const match = link.getAttribute("href") === `#${entry.target.id}`;
             if (match) link.setAttribute("aria-current", "true");
@@ -149,7 +158,7 @@
       { rootMargin: "-45% 0px -50% 0px" }
     );
 
-    sections.forEach((section) => spy.observe(section));
+    spySections.forEach((section) => spy.observe(section));
   }
 
   /* ------------------------------------------------------------------ */
