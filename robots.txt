@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devqapro.github.io/CoffeeGaia/sitemap.xml

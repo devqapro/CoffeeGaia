@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta completa — CoffeeGaia</title>
+  <meta name="description" content="La carta completa de CoffeeGaia: cafés de especialidad, bebidas frías, repostería horneada cada mañana y café en grano para llevar. Bogotá, Chapinero.">
+  <meta name="theme-color" content="#191009">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Carta completa — CoffeeGaia">
+  <meta property="og:description" content="Cafés de origen único, fríos, repostería del día y café en grano para llevar.">
+  <meta property="og:image" content="Images/imagenes%20publicas/galeria-barra.jpg">
+  <link rel="canonical" href="https://devqapro.github.io/CoffeeGaia/menu.html">
+  <meta property="og:url" content="https://devqapro.github.io/CoffeeGaia/menu.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="Images/imagenes%20publicas/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#carta">Saltar a la carta</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CoffeeGaia, inicio">
+        <svg class="brand-bean" viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="16" cy="16" r="14.5"/>
+            <ellipse cx="16" cy="16" rx="6.4" ry="10.5" transform="rotate(38 16 16)"/>
+            <path d="M16 5.5c-3.6 2.6-3.6 18.4 0 21"/>
+          </g>
+        </svg>
+        <span>Coffee<em>Gaia</em></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html#historia">Historia</a>
+        <a href="menu.html" aria-current="page">Carta</a>
+        <a href="index.html#espacio">Espacio</a>
+        <a href="index.html#visitanos">Visítanos</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="index.html#reserva">Reservar mesa</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+    <div class="mobile-nav-inner">
+      <a href="index.html"><span>01</span>Inicio</a>
+      <a href="menu.html"><span>02</span>Carta</a>
+      <a href="index.html#historia"><span>03</span>Historia</a>
+      <a href="index.html#espacio"><span>04</span>Espacio</a>
+      <a href="index.html#reserva"><span>05</span>Reservar mesa</a>
+    </div>
+    <div class="mobile-nav-foot">
+      <p>Calle 72 # 5-24, Bogotá</p>
+      <p>Lun – Dom · 7:00 – 19:00</p>
+    </div>
+  </nav>
+
+  <main id="carta">
+    <!-- ================= PORTADA DE LA CARTA ================= -->
+    <section class="section menu menu-page">
+      <div class="container">
+        <div class="menu-hero">
+          <p class="eyebrow reveal">La carta completa</p>
+          <h1 class="reveal">Para tomar despacio,<br><em>con gusto</em>.</h1>
+          <p class="menu-intro reveal">Todo nuestro café es de origen único, tostado cada martes en la tienda. Los precios incluyen impuestos y la leche de avena o almendra no tiene costo extra.</p>
+        </div>
+
+        <div class="tabs tabs-sticky reveal" role="tablist" aria-label="Categorías de la carta">
+          <button class="tab" id="tab-calientes" role="tab" aria-selected="true" aria-controls="panel-calientes" tabindex="0">Cafés calientes</button>
+          <button class="tab" id="tab-frios" role="tab" aria-selected="false" aria-controls="panel-frios" tabindex="-1">Fríos</button>
+          <button class="tab" id="tab-reposteria" role="tab" aria-selected="false" aria-controls="panel-reposteria" tabindex="-1">Repostería</button>
+          <button class="tab" id="tab-grano" role="tab" aria-selected="false" aria-controls="panel-grano" tabindex="-1">Café en grano</button>
+        </div>
+
+        <div class="menu-panels reveal">
+          <div class="menu-panel" id="panel-calientes" role="tabpanel" aria-labelledby="tab-calientes" tabindex="0">
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Espresso <span class="tag">Favorito</span></span>
+                <span class="price">$6.000</span>
+                <span class="desc">60 ml · Huila, notas a panela, naranja y cacao.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Doble espresso</span>
+                <span class="price">$8.000</span>
+                <span class="desc">120 ml · intenso, cremoso y con final dulce.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cortado</span>
+                <span class="price">$7.500</span>
+                <span class="desc">Espresso y un velo de leche vaporizada.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Americano</span>
+                <span class="price">$7.000</span>
+                <span class="desc">Doble espresso alargado, 240 ml.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Flat white</span>
+                <span class="price">$9.500</span>
+                <span class="desc">Doble ristretto con leche texturizada a 62 °C.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Capuchino de avellana</span>
+                <span class="price">$10.500</span>
+                <span class="desc">Leche entera, sirope de avellana tostada y nuez moscada.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Latte de la casa</span>
+                <span class="price">$9.000</span>
+                <span class="desc">Suave, con canela espolvoreada y miel de caña.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Filtrado V60</span>
+                <span class="price">$11.000</span>
+                <span class="desc">250 ml · método manual, lote rotativo de la semana.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Prensa francesa <span class="tag">Para dos</span></span>
+                <span class="price">$13.000</span>
+                <span class="desc">500 ml · maceración de 4 minutos, cuerpo completo.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Mocha de la casa</span>
+                <span class="price">$12.000</span>
+                <span class="desc">Chocolate 70 % del Cauca, canela y cacao rallado.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Affogato</span>
+                <span class="price">$13.000</span>
+                <span class="desc">Helado de vainilla ahogado en doble espresso.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Chai latte</span>
+                <span class="price">$11.500</span>
+                <span class="desc">Té negro, especias y leche vaporizada. Sin café.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-frios" role="tabpanel" aria-labelledby="tab-frios" tabindex="0" hidden>
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Cold brew 18 h <span class="tag">Vegano</span></span>
+                <span class="price">$11.000</span>
+                <span class="desc">Extracción en frío, servido con hielo grande y naranja.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Espresso tónico</span>
+                <span class="price">$12.500</span>
+                <span class="desc">Doble espresso, tónica artesanal y piel de limón.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Latte helado</span>
+                <span class="price">$10.000</span>
+                <span class="desc">Leche fría, hielo y un shot de nuestro blend.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Frappé de avellana</span>
+                <span class="price">$13.500</span>
+                <span class="desc">Café, leche, hielo y crema batida de la casa.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Iced matcha latte</span>
+                <span class="price">$13.000</span>
+                <span class="desc">Matcha ceremonial, leche de avena y un toque de miel.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Limonada de café</span>
+                <span class="price">$9.500</span>
+                <span class="desc">Cold brew, limón, panela y hierbabuena. Sorprende.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Granizado de cacao</span>
+                <span class="price">$12.000</span>
+                <span class="desc">Cacao del Cauca, hielo picado y leche condensada.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cold brew con coco <span class="tag">Vegano</span></span>
+                <span class="price">$12.500</span>
+                <span class="desc">Agua de coco, cold brew y limón siciliano.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-reposteria" role="tabpanel" aria-labelledby="tab-reposteria" tabindex="0" hidden>
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Croissant de mantequilla</span>
+                <span class="price">$7.500</span>
+                <span class="desc">Horneado a las 7:00 a. m. 36 capas de paciencia.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Pain au chocolat</span>
+                <span class="price">$8.500</span>
+                <span class="desc">Masa madre laminada y chocolate amargo.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Roll de canela</span>
+                <span class="price">$8.000</span>
+                <span class="desc">Caramelo, canela de Java y glaseado de queso.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Banana bread <span class="tag">Vegano</span></span>
+                <span class="price">$9.000</span>
+                <span class="desc">Plátano maduro, nueces y especias. Sin lácteos.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cheesecake de maracuyá</span>
+                <span class="price">$12.000</span>
+                <span class="desc">Base de galleta, queso crema y coulis ácido.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Torta de zanahoria</span>
+                <span class="price">$10.500</span>
+                <span class="desc">Hecha en casa, con frosting de queso y nuez.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Cookie de chocolate</span>
+                <span class="price">$6.500</span>
+                <span class="desc">Centro blandito, sal marina y chocolate 60 %.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Tostada de aguacate</span>
+                <span class="price">$12.500</span>
+                <span class="desc">Pan de masa madre, aguacate, huevo pochê y ajonjolí.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-grano" role="tabpanel" aria-labelledby="tab-grano" tabindex="0" hidden>
+            <ul class="menu-grid">
+              <li class="menu-item">
+                <span class="name">Huila — lote de la temporada</span>
+                <span class="price">$38.000 / 250 g</span>
+                <span class="desc">Notas a panela, naranja y cacao. Tueste medio.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Blend de la casa</span>
+                <span class="price">$36.000 / 250 g</span>
+                <span class="desc">Huila y Nariño. Dulce y versátil, ideal para espresso.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Nariño de altura</span>
+                <span class="price">$42.000 / 250 g</span>
+                <span class="desc">1.900 msnm. Floral, con acidez brillante.</span>
+              </li>
+              <li class="menu-item">
+                <span class="name">Descafeinado con caña</span>
+                <span class="price">$40.000 / 250 g</span>
+                <span class="desc">Descafeinado natural con jugo de caña. Sin químicos.</span>
+              </li>
+            </ul>
+            <p class="grain-note">Molemos tu café en el punto para tu método: espresso, filtrado o prensa. Solo dínoslo al pagar.</p>
+          </div>
+        </div>
+
+        <!-- ================= PROMO ================= -->
+        <div class="promo-banner reveal">
+          <div>
+            <p class="promo-eyebrow">De 7:00 a 11:00 a. m.</p>
+            <h3>Desayuno Gaia</h3>
+            <p>Café de la casa + croissant recién horneado + jugo de fruta natural.</p>
+          </div>
+          <p class="promo-price">$16.900</p>
+        </div>
+
+        <div class="menu-cta reveal">
+          <h2>¿Te abrió el antojo?</h2>
+          <p>Reserva tu mesa y te lo servimos calientito.</p>
+          <a class="btn btn-primary" href="index.html#reserva">
+            Reservar mesa
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-news">
+        <div>
+          <p class="eyebrow eyebrow-light reveal">La carta del mes</p>
+          <h2 class="reveal">Café nuevo<br><em>en tu correo</em>.</h2>
+        </div>
+        <div class="news-letter reveal">
+          <p>Un correo al mes con el origen de temporada, catas y recetas. Sin ruido, sin spam.</p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <label class="sr-only" for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+            <button type="submit" aria-label="Suscribirme">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="CoffeeGaia, inicio">
+            <svg class="brand-bean" viewBox="0 0 32 32" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <circle cx="16" cy="16" r="14.5"/>
+                <ellipse cx="16" cy="16" rx="6.4" ry="10.5" transform="rotate(38 16 16)"/>
+                <path d="M16 5.5c-3.6 2.6-3.6 18.4 0 21"/>
+              </g>
+            </svg>
+            <span>Coffee<em>Gaia</em></span>
+          </a>
+          <p>Café de especialidad tostado en casa. Un proyecto pequeño, de barrio y con mucha curiosidad.</p>
+        </div>
+
+        <nav aria-label="Explorar">
+          <h4>Explorar</h4>
+          <a href="index.html#historia">Historia</a>
+          <a href="menu.html">Carta completa</a>
+          <a href="index.html#espacio">Espacio</a>
+          <a href="index.html#visitanos">Visítanos</a>
+        </nav>
+
+        <div>
+          <h4>Visítanos</h4>
+          <p>Calle 72 # 5-24<br>Bogotá, Colombia</p>
+          <p>Lun – Dom · 7:00 – 19:00</p>
+        </div>
+
+        <div>
+          <h4>Síguenos</h4>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a4 4 0 1 1-3.5-3.9"/><path d="M14 4c.5 3 2.4 4.8 5 5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> CoffeeGaia. Todos los derechos reservados.</p>
+        <p>Tostado con calma en Bogotá <span aria-hidden="true">✦</span></p>
+        <a href="#carta" class="back-top">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/573001234567?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20CoffeeGaia" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/><path d="M8.9 8.4c.6-.6 1.1-.3 1.4.3l.5 1c.1.3 0 .6-.2.8l-.4.4c.5 1 1.3 1.8 2.3 2.3l.4-.4c.2-.2.5-.3.8-.2l1 .5c.6.3.9.8.3 1.4-1.9 1.9-4.4.4-5.9-1.1s-3.1-4-1.2-5Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

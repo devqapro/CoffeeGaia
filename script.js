@@ -162,8 +162,22 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Formularios (demo, sin backend)                                     */
+  /* Formularios                                                         */
+  /*                                                                     */
+  /* Para recibir las reservas y suscripciones en tu correo:             */
+  /*   1. Crea una cuenta gratis en https://web3forms.com (o Formspree). */
+  /*   2. Confirma tu correo y copia la clave de acceso (access key).    */
+  /*   3. Pégala aquí abajo y vuelve a publicar.                         */
+  /*                                                                     */
+  /* Con Web3Forms el endpoint es: https://api.web3forms.com/submit      */
+  /* Con Formspree el endpoint es: https://formspree.io/f/TU-ID          */
+  /* Mientras estén vacíos, los formularios solo demuestran el flujo.    */
   /* ------------------------------------------------------------------ */
+  const FORM_ENDPOINTS = {
+    reserva: "",
+    newsletter: "",
+  };
+
   const showMessage = (form, text) => {
     const message = $(".form-msg", form);
     if (!message) return;
@@ -174,6 +188,26 @@
     form._messageTimer = window.setTimeout(() => {
       message.classList.remove("is-visible");
     }, 7000);
+  };
+
+  const sendFormData = async (form, endpoint) => {
+    // Sin endpoint configurado no se envía nada (modo demostración).
+    if (!endpoint) return { ok: true, demo: true };
+
+    try {
+      const payload = Object.fromEntries(new FormData(form).entries());
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      return { ok: response.ok };
+    } catch {
+      return { ok: false };
+    }
   };
 
   const localISODate = () => {
@@ -187,41 +221,65 @@
     const dateInput = $("#fecha", bookingForm);
     if (dateInput) dateInput.min = localISODate();
 
-    bookingForm.addEventListener("submit", (event) => {
+    bookingForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!bookingForm.checkValidity()) {
         bookingForm.reportValidity();
         return;
       }
 
+      const button = $("button[type=submit]", bookingForm);
+      if (button) button.disabled = true;
+
       const name = $("#nombre", bookingForm).value.trim();
-      showMessage(
-        bookingForm,
-        `¡Listo, ${name || "gracias"}! Te escribiremos para confirmar tu mesa.`
-      );
-      bookingForm.reset();
-      if (dateInput) dateInput.min = localISODate();
-      $("#hora", bookingForm).value = "10:00";
+      const result = await sendFormData(bookingForm, FORM_ENDPOINTS.reserva);
+
+      if (button) button.disabled = false;
+
+      if (result.ok) {
+        const nota = result.demo ? " (modo demostración)" : "";
+        showMessage(
+          bookingForm,
+          `¡Listo, ${name || "gracias"}! Te escribiremos para confirmar tu mesa.${nota}`
+        );
+        bookingForm.reset();
+        if (dateInput) dateInput.min = localISODate();
+        $("#hora", bookingForm).value = "10:00";
+      } else {
+        showMessage(
+          bookingForm,
+          "Ups, no pudimos enviar tu reserva. Inténtalo de nuevo o escríbenos por WhatsApp."
+        );
+      }
     });
   }
 
   const newsletterForm = $("#newsletter-form");
   if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (event) => {
+    newsletterForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!newsletterForm.checkValidity()) {
         newsletterForm.reportValidity();
         return;
       }
 
+      const button = $("button[type=submit]", newsletterForm);
+      if (button) button.disabled = true;
+      const result = await sendFormData(newsletterForm, FORM_ENDPOINTS.newsletter);
+      if (button) button.disabled = false;
+
       const wrapper = newsletterForm.closest(".news-letter");
       const message = wrapper ? $(".form-msg", wrapper) : null;
       if (message) {
-        message.textContent = "¡Bienvenido a la mesa! Revisa tu correo para confirmar.";
+        message.textContent = result.ok
+          ? result.demo
+            ? "¡Bienvenido a la mesa! (modo demostración)"
+            : "¡Bienvenido a la mesa! Revisa tu correo para confirmar."
+          : "Ups, algo falló. Inténtalo de nuevo en unos minutos.";
         message.classList.add("is-visible");
         window.setTimeout(() => message.classList.remove("is-visible"), 7000);
       }
-      newsletterForm.reset();
+      if (result.ok) newsletterForm.reset();
     });
   }
 })();

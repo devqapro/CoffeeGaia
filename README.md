@@ -6,9 +6,13 @@ Landing page de una cafetería de especialidad. Sitio estático, sin dependencia
 
 ```
 landing page/
-├── index.html                  # Contenido y secciones de la página
+├── index.html                  # Portada con todas las secciones
+├── menu.html                   # Carta completa (cafés, fríos, repostería, grano)
 ├── styles.css                  # Sistema visual, layout y responsive
 ├── script.js                   # Menú móvil, pestañas, animaciones y formularios
+├── analytics.js                # Google Analytics (se activa con tu ID)
+├── sitemap.xml / robots.txt    # SEO
+├── .github/workflows/deploy.yml # Publica automáticamente en GitHub Pages
 ├── Images/
 │   ├── Banco de imagenes/      # Biblioteca de fotos (la web NO las usa)
 │   ├── imagenes publicas/      # Únicas imágenes que se ven en la web
@@ -64,13 +68,71 @@ Luego visita `http://localhost:8000`.
 - Tipografías: Fraunces (display) e Inter (texto) desde Google Fonts.
 - Imágenes locales servidas desde `Images/imagenes publicas/` (sin dependencias externas).
 - Animaciones con `IntersectionObserver` y respeto a `prefers-reduced-motion`.
-- Formularios demostrativos: validan y muestran confirmación, pero no envían datos a ningún backend.
+- Formularios preparados para Web3Forms/Formspree (ver abajo): validan y confirman sin backend.
 - Navegación accesible: skip link, foco visible, `aria-*` en pestañas, menú móvil y formularios.
+- Mapa de Google integrado en "Visítanos" y botón flotante de WhatsApp.
 
-## Personalizar
+## Publicar en internet (GitHub Pages)
 
-- **Marca:** busca `CoffeeGaia` en `index.html` y en el logo SVG.
+El repo incluye un flujo de despliegue automático (`.github/workflows/deploy.yml`).
+Cada vez que hagas `git push` a `main`, el sitio se publica en:
+
+```
+https://devqapro.github.io/CoffeeGaia/
+```
+
+Para activarlo la primera vez:
+
+1. Crea el repositorio en GitHub (privado u público) y súbelo:
+
+   ```bash
+   cd "landing page"
+   git remote add origin https://github.com/devqapro/CoffeeGaia.git
+   git push -u origin main
+   ```
+
+2. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Espera a que termine el workflow (pestaña **Actions**) y abre la URL.
+
+Tras publicar, revisa que la URL de arriba sea correcta y actualízala en
+`sitemap.xml`, `robots.txt` y en las etiquetas `canonical` de los HTML si cambia.
+
+## Recibir reservas en tu correo
+
+Los formularios ya validan y confirman, pero no envían nada hasta que conectes
+un servicio. Con Web3Forms (gratis):
+
+1. Entra a [web3forms.com](https://web3forms.com), escribe tu correo y recibe la **access key**.
+2. Abre `script.js`, busca `FORM_ENDPOINTS` (está al inicio de la sección de formularios) y déjalo así:
+
+   ```js
+   const FORM_ENDPOINTS = {
+     reserva: "https://api.web3forms.com/submit",
+     newsletter: "https://api.web3forms.com/submit",
+   };
+   ```
+
+3. Añade tu clave como campo oculto en los dos formularios (`index.html` y `menu.html`):
+
+   ```html
+   <input type="hidden" name="access_key" value="TU-CLAVE-DE-WEB3FORMS">
+   ```
+
+4. Haz commit y push: el despliegue se publica solo.
+
+## Analítica (Google Analytics 4)
+
+El sitio no mide nada hasta que lo actives:
+
+1. Crea una cuenta en [analytics.google.com](https://analytics.google.com) y un servicio "Web".
+2. Copia tu ID de medición (empieza con `G-`).
+3. Pégalo en `analytics.js`, en la constante `GA_MEASUREMENT_ID`, y publica.
+
+## Personalizar más
+
+- **WhatsApp:** cambia el número en el enlace `wa.me` de `index.html` y `menu.html`.
+- **Marca:** busca `CoffeeGaia` en los HTML y en el logo SVG.
 - **Colores:** variables en `:root` al inicio de `styles.css`.
-- **Contenido del menú:** edita los `li.menu-item` de cada panel en `index.html`.
-- **Dirección, horarios y teléfono:** sección `#visitanos` y footer.
+- **Contenido del menú:** edita los `li.menu-item` en `menu.html` (carta completa) y en `index.html` (resumen).
+- **Dirección, horarios y teléfono:** sección `#visitanos`, footer y el dato estructurado JSON-LD en `index.html`.
 - **Imágenes:** consulta [`Images/LEEME.md`](Images/LEEME.md) antes de reemplazarlas.
