@@ -24,13 +24,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Solo se publica lo que la web necesita. El banco de imágenes,
+      # la documentación y los scripts internos quedan fuera del sitio.
+      - name: Preparar sitio público
+        run: |
+          mkdir -p _site
+          cp index.html menu.html styles.css script.js analytics.js robots.txt sitemap.xml _site/
+          cp .nojekyll _site/
+          mkdir -p "_site/Images"
+          cp -r "Images/imagenes publicas" "_site/Images/imagenes publicas"
+
       - name: Configurar Pages
         uses: actions/configure-pages@v5
 
       - name: Subir el sitio
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Publicar
         id: deployment

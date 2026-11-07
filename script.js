@@ -13,6 +13,18 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ------------------------------------------------------------------ */
+  /* Estado de apertura (7:00 – 21:00)                                   */
+  /* ------------------------------------------------------------------ */
+  const estadoHoy = $("#estado-hoy");
+  if (estadoHoy) {
+    const hora = new Date().getHours();
+    const abierto = hora >= 7 && hora < 21;
+    estadoHoy.textContent = abierto
+      ? "Abierto ahora · cierra a las 9:00 p. m."
+      : "Cerrado por hoy · abrimos a las 7:00 a. m.";
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Header con fondo al hacer scroll                                    */
   /* ------------------------------------------------------------------ */
   const header = $("#header");
@@ -165,14 +177,16 @@
   /* Formularios                                                         */
   /*                                                                     */
   /* Para recibir las reservas y suscripciones en tu correo:             */
-  /*   1. Crea una cuenta gratis en https://web3forms.com (o Formspree). */
+  /*   1. Crea una cuenta gratis en https://web3forms.com                */
   /*   2. Confirma tu correo y copia la clave de acceso (access key).    */
-  /*   3. Pégala aquí abajo y vuelve a publicar.                         */
+  /*   3. Pega la clave en WEB3FORMS_ACCESS_KEY y vuelve a publicar.     */
   /*                                                                     */
-  /* Con Web3Forms el endpoint es: https://api.web3forms.com/submit      */
-  /* Con Formspree el endpoint es: https://formspree.io/f/TU-ID          */
-  /* Mientras estén vacíos, los formularios solo demuestran el flujo.    */
+  /* La misma clave sirve para los dos formularios. Mientras esté vacía, */
+  /* los formularios solo demuestran el flujo y no envían datos.         */
   /* ------------------------------------------------------------------ */
+  const WEB3FORMS_ACCESS_KEY = "";
+  const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
   const FORM_ENDPOINTS = {
     reserva: "",
     newsletter: "",
@@ -196,6 +210,16 @@
 
     try {
       const payload = Object.fromEntries(new FormData(form).entries());
+
+      if (endpoint === WEB3FORMS_ENDPOINT) {
+        if (!WEB3FORMS_ACCESS_KEY) return { ok: false };
+        // Web3Forms exige la access_key; el honeypot no se envía.
+        delete payload.empresa_web;
+        payload.access_key = WEB3FORMS_ACCESS_KEY;
+        payload.subject = "Nuevo mensaje desde coffeegaia.co";
+        payload.from_name = "CoffeeGaia";
+      }
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -225,6 +249,14 @@
       event.preventDefault();
       if (!bookingForm.checkValidity()) {
         bookingForm.reportValidity();
+        return;
+      }
+
+      // Honeypot: si un bot llenó el campo trampa, fingimos éxito y no enviamos.
+      const honeypot = $("input[name=empresa_web]", bookingForm);
+      if (honeypot && honeypot.value) {
+        showMessage(bookingForm, "¡Listo! Te escribiremos para confirmar tu mesa.");
+        bookingForm.reset();
         return;
       }
 
@@ -260,6 +292,19 @@
       event.preventDefault();
       if (!newsletterForm.checkValidity()) {
         newsletterForm.reportValidity();
+        return;
+      }
+
+      // Honeypot: si un bot llenó el campo trampa, fingimos éxito y no enviamos.
+      const honeypot = $("input[name=empresa_web]", newsletterForm);
+      if (honeypot && honeypot.value) {
+        const wrapper = newsletterForm.closest(".news-letter");
+        const message = wrapper ? $(".form-msg", wrapper) : null;
+        if (message) {
+          message.textContent = "¡Bienvenido a la mesa! Revisa tu correo para confirmar.";
+          message.classList.add("is-visible");
+        }
+        newsletterForm.reset();
         return;
       }
 

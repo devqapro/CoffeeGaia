@@ -11,23 +11,22 @@ Images/
 ## Cómo cambiar una imagen
 
 1. Elige la foto nueva (idealmente en formato `.jpg`).
-2. Renómbrala exactamente igual que el archivo que quieres reemplazar. Por ejemplo, para cambiar la foto del hero debe llamarse `hero.jpg`.
-3. Cópiala dentro de `Images/imagenes publicas/` y acepta reemplazar.
-4. Recarga la página con `Ctrl + Shift + R` (o `Cmd + Shift + R` en Mac) para limpiar la caché.
-
-También puedes publicar una foto del banco con el script:
+2. Publica con el script, indicando el nombre del espacio **sin extensión**:
 
 ```bash
-./scripts/publicar-imagen.sh "Images/Banco de imagenes/alt-pan-artesanal.jpg" "galeria-croissant.jpg"
+./scripts/publicar-imagen.sh "Images/Banco de imagenes/alt-pan-artesanal.jpg" "galeria-croissant" 900
 ```
 
-El script copia la imagen al slot indicado y, si tienes ImageMagick instalado, la optimiza automáticamente.
+   El script genera automáticamente la versión `.jpg` y la `.webp` optimizada; la web usa WebP cuando el navegador lo soporta y JPG como respaldo.
+3. Recarga la página con `Ctrl + Shift + R` (o `Cmd + Shift + R` en Mac) para limpiar la caché.
+
+Si prefieres hacerlo a mano, debes crear **dos archivos** con el mismo nombre: `nombre.jpg` y `nombre.webp`. Solo cambia la extensión en `index.html` si el espacio todavía no usa el par JPG/WebP (el hero ya está configurado así).
 
 ## Archivos publicados y su ubicación
 
 | Archivo en `imagenes publicas/` | Dónde aparece | Tamaño sugerido |
 | --- | --- | --- |
-| `hero.jpg` | Fondo de la portada | 2000 × 1300 px |
+| `hero.jpg` + `hero.webp` | Fondo de la portada | 2000 px de ancho |
 | `historia.jpg` | Sección “Nuestra historia” (vertical) | 1000 × 1250 px |
 | `galeria-granos.jpg` | Galería, imagen grande | 1200 × 1200 px |
 | `galeria-barra.jpg` | Galería, franja ancha | 1200 × 800 px |
@@ -42,10 +41,10 @@ La web recorta las fotos automáticamente con `object-fit: cover`, así que no n
 
 ## Recomendaciones
 
-- Mantén los nombres de archivo tal cual. Si cambias un nombre o la extensión, también debes actualizar la ruta en `index.html`.
+- Mantén los nombres de archivo tal cual. La web carga `nombre.webp` y usa `nombre.jpg` como respaldo.
 - Usa fotos horizontales para el hero, la galería ancha y “Visítanos”; verticales para “Historia”.
-- Intenta que cada imagen pese menos de 400 KB para que la página cargue rápido.
-- Formatos válidos: `.jpg`, `.png` y `.webp`. Si usas `.webp`, actualiza la extensión en `index.html`.
+- Intenta que cada imagen pese menos de 400 KB para que la página cargue rápido (el script optimiza solo).
+- Formatos publicados: `.jpg` + `.webp`. El SVG solo para el favicon.
 - El banco no se publica ni se enlaza desde la web: es tu biblioteca personal para elegir y guardar versiones en alta resolución.
 - Las fotos actuales provienen de Unsplash y son de uso libre. Cuando tengas fotos reales del café, reemplázalas manteniendo los mismos nombres.
 

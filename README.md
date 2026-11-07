@@ -103,22 +103,21 @@ Los formularios ya validan y confirman, pero no envían nada hasta que conectes
 un servicio. Con Web3Forms (gratis):
 
 1. Entra a [web3forms.com](https://web3forms.com), escribe tu correo y recibe la **access key**.
-2. Abre `script.js`, busca `FORM_ENDPOINTS` (está al inicio de la sección de formularios) y déjalo así:
+2. Abre `script.js`, busca la sección de formularios y llena las dos constantes:
 
    ```js
+   const WEB3FORMS_ACCESS_KEY = "TU-CLAVE-DE-WEB3FORMS";
    const FORM_ENDPOINTS = {
      reserva: "https://api.web3forms.com/submit",
      newsletter: "https://api.web3forms.com/submit",
    };
    ```
 
-3. Añade tu clave como campo oculto en los dos formularios (`index.html` y `menu.html`):
+   La clave se inyecta automáticamente en cada envío; no hace falta tocar el HTML.
+   Los formularios ya incluyen un **honeypot anti-spam** (campo invisible que los
+   bots llenan y las personas no: si aparece lleno, el envío se descarta en silencio).
 
-   ```html
-   <input type="hidden" name="access_key" value="TU-CLAVE-DE-WEB3FORMS">
-   ```
-
-4. Haz commit y push: el despliegue se publica solo.
+3. Haz commit y push: el despliegue se publica solo.
 
 ## Analítica (Google Analytics 4)
 
@@ -127,6 +126,11 @@ El sitio no mide nada hasta que lo actives:
 1. Crea una cuenta en [analytics.google.com](https://analytics.google.com) y un servicio "Web".
 2. Copia tu ID de medición (empieza con `G-`).
 3. Pégalo en `analytics.js`, en la constante `GA_MEASUREMENT_ID`, y publica.
+
+> **Nota de privacidad:** al activar GA4, añade un aviso de cookies en el sitio.
+> Para Colombia es buena práctica (Ley 1581 de 2012 de protección de datos)
+> informar qué se mide. Un banner simple con enlace a una política de
+> privacidad es suficiente para empezar.
 
 ## Personalizar más
 
