@@ -356,6 +356,29 @@ body::after {
   box-shadow: 0 1px 0 var(--line);
 }
 
+/* Portada: el header flota sobre la foto del hero (fondo oscuro). */
+.site-header.on-dark {
+  text-shadow: 0 1px 14px rgba(15, 10, 6, 0.55);
+}
+
+.site-header.on-dark.is-scrolled {
+  text-shadow: none;
+}
+
+/* Páginas claras (carta): el header nace sólido sobre fondo crema,
+   con el mismo color de tinta que al hacer scroll. */
+.site-header.on-light {
+  color: var(--ink);
+  background: rgba(247, 241, 230, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.site-header.on-light .brand em {
+  color: var(--clay);
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -407,7 +430,7 @@ body::after {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-decoration: none;
-  opacity: 0.82;
+  opacity: 0.92;
   transition: opacity 0.3s var(--ease);
 }
 
@@ -604,8 +627,9 @@ body::after {
   z-index: -1;
   background: linear-gradient(
       180deg,
-      rgba(15, 10, 6, 0.62) 0%,
-      rgba(15, 10, 6, 0.18) 38%,
+      rgba(15, 10, 6, 0.74) 0%,
+      rgba(15, 10, 6, 0.3) 34%,
+      rgba(15, 10, 6, 0.26) 52%,
       rgba(15, 10, 6, 0.82) 100%
     ),
     linear-gradient(90deg, rgba(15, 10, 6, 0.55) 0%, rgba(15, 10, 6, 0) 65%);
