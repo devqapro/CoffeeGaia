@@ -27,27 +27,26 @@
   {
     "@context": "https://schema.org",
     "@type": "CafeOrCoffeeShop",
-    "name": "CoffeeGaia",
-    "description": "Café de especialidad tostado en casa, en el barrio de Chapinero, Bogotá.",
+    "name": "Coffee Gaia",
+    "description": "Café de especialidad tostado en casa, en Rionegro, Antioquia, Colombia.",
     "image": "Images/imagenes publicas/hero.jpg",
     "url": "https://devqapro.github.io/CoffeeGaia/",
-    "telephone": "+57 601 742 88 10",
+    "telephone": "+57 310 6430359",
     "priceRange": "$$",
     "servesCuisine": "Café de especialidad",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle 72 # 5-24",
-      "addressLocality": "Bogotá",
+      "streetAddress": "Calle 63 # 54-38",
+      "addressLocality": "Rionegro",
+      "addressRegion": "Antioquia",
       "addressCountry": "CO"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "07:00",
-        "closes": "19:00"
-      }
-    ],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 6.1644776,
+      "longitude": -75.3735833
+    },
+    "hasMap": "https://maps.app.goo.gl/Dh1zHoqCS8SMoDk9A",
     "hasMenu": "https://devqapro.github.io/CoffeeGaia/menu.html",
     "acceptsReservations": "True"
   }
@@ -96,8 +95,8 @@
       <a href="#reserva"><span>06</span>Reservar mesa</a>
     </div>
     <div class="mobile-nav-foot">
-      <p>Calle 72 # 5-24, Bogotá</p>
-      <p>Lun – Dom · 7:00 – 19:00</p>
+      <p>Calle 63 # 54-38, Rionegro</p>
+      <p>Abierto hasta las 9:00 p. m.</p>
     </div>
   </nav>
 
@@ -125,11 +124,11 @@
         <div class="hero-foot reveal">
           <p class="hero-rating">
             <span class="stars" aria-hidden="true">★★★★★</span>
-            <span><strong>4.9</strong> / 5 · 1.200 reseñas</span>
+            <span><strong>5.0</strong> / 5 · Google Maps</span>
           </p>
           <p class="hero-hours">
             <span class="pulse" aria-hidden="true"></span>
-            Abierto hoy · 7:00 – 19:00
+            Abierto hoy · cierra a las 9:00 p. m.
           </p>
           <a class="scroll-cue" href="#historia">
             Desliza
@@ -458,17 +457,17 @@
             <div class="info-card">
               <div class="info-row">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                <div><span>Calle 72 # 5-24</span><small>Bogotá · Chapinero</small></div>
+                <div><span>Calle 63 # 54-38</span><small>Rionegro · Antioquia</small></div>
               </div>
               <div class="info-row">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-                <div><span>Lun – Dom · 7:00 – 19:00</span><small>Cocina hasta las 18:30</small></div>
+                <div><span>Lun – Dom</span><small>Abierto hasta las 9:00 p. m.</small></div>
               </div>
               <div class="info-row">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 4 5.1 1 1 0 0 1 5 4Z"/></svg>
-                <div><span>+57 601 742 88 10</span><small>hola@coffeegaia.co</small></div>
+                <div><span>+57 310 643 03 59</span><small>hola@coffeegaia.co</small></div>
               </div>
-              <a class="link-arrow" href="https://maps.google.com/?q=Calle+72+%23+5-24,+Bogota" target="_blank" rel="noopener">
+              <a class="link-arrow" href="https://maps.app.goo.gl/Dh1zHoqCS8SMoDk9A" target="_blank" rel="noopener">
                 Cómo llegar
                 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
               </a>
@@ -503,7 +502,7 @@
               </div>
               <div class="field">
                 <label for="hora">Hora</label>
-                <input id="hora" name="hora" type="time" min="07:00" max="18:30" value="10:00" required>
+                <input id="hora" name="hora" type="time" min="07:00" max="20:30" value="10:00" required>
               </div>
               <button class="btn btn-primary btn-block" type="submit">
                 Confirmar reserva
@@ -516,8 +515,8 @@
 
         <div class="map-wrap reveal">
           <iframe
-            src="https://www.google.com/maps?q=Calle%2072%20%235-24%2C%20Chapinero%2C%20Bogot%C3%A1%2C%20Colombia&amp;output=embed"
-            title="Mapa: CoffeeGaia en la Calle 72 # 5-24, Bogotá"
+            src="https://www.google.com/maps?q=Coffee+Gaia%2C+Calle+63+%2354-38%2C+Rionegro%2C+Antioquia%2C+Colombia&amp;output=embed"
+            title="Mapa: Coffee Gaia en la Calle 63 # 54-38, Rionegro, Antioquia"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen></iframe>
@@ -572,8 +571,8 @@
 
         <div>
           <h4>Visítanos</h4>
-          <p>Calle 72 # 5-24<br>Bogotá, Colombia</p>
-          <p>Lun – Dom · 7:00 – 19:00</p>
+          <p>Calle 63 # 54-38<br>Rionegro, Antioquia</p>
+          <p>Abierto hasta las 9:00 p. m.</p>
         </div>
 
         <div>
@@ -594,13 +593,13 @@
 
       <div class="footer-bottom">
         <p>© <span id="year">2026</span> CoffeeGaia. Todos los derechos reservados.</p>
-        <p>Tostado con calma en Bogotá <span aria-hidden="true">✦</span></p>
+        <p>Tostado con calma en Rionegro <span aria-hidden="true">✦</span></p>
         <a href="#inicio" class="back-top">Volver arriba ↑</a>
       </div>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/573001234567?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20CoffeeGaia" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/573106430359?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20Coffee%20Gaia" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/><path d="M8.9 8.4c.6-.6 1.1-.3 1.4.3l.5 1c.1.3 0 .6-.2.8l-.4.4c.5 1 1.3 1.8 2.3 2.3l.4-.4c.2-.2.5-.3.8-.2l1 .5c.6.3.9.8.3 1.4-1.9 1.9-4.4.4-5.9-1.1s-3.1-4-1.2-5Z"/></svg>
   </a>
 
