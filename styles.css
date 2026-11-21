@@ -927,10 +927,31 @@ body::after {
 
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
   padding: 0.3rem;
   background: rgba(25, 16, 9, 0.06);
   border-radius: 999px;
+}
+
+.menu-subtitle {
+  margin: 2rem 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.menu-subtitle + .menu-grid {
+  margin-top: 0;
+}
+
+.inline-link {
+  color: var(--clay-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .tab {
@@ -1972,55 +1993,6 @@ body::after {
 
 .menu-page .menu-panels {
   margin-top: 2rem;
-}
-
-.grain-note {
-  max-width: 60ch;
-  margin-top: 1.5rem;
-  padding-top: 0.5rem;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.promo-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.25rem 2.5rem;
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: var(--radius);
-}
-
-.promo-eyebrow {
-  margin-bottom: 0.5rem;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.promo-banner h2 {
-  margin-bottom: 0.4rem;
-  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
-}
-
-.promo-banner > div > p:last-child {
-  max-width: 46ch;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: rgba(247, 241, 230, 0.65);
-}
-
-.promo-price {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: var(--gold);
 }
 
 .menu-cta {
